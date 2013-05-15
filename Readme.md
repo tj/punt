@@ -1,7 +1,7 @@
 
 # Punt
 
-  A small layer on top of node's core __UDP__ module to make fast messaging even simpler.
+  A small layer on top of node's core __UDP__ module to make fast volatile messaging even simpler.
 
 ## Installation
 
