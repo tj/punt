@@ -54,7 +54,7 @@ hello world
   Punt's protocol is super simple, a `type` annotation followed by the original `data`:
 
 ```
-    8        N
+    1        N
  +-----------------+
  | type | data ... |
  +-----------------+
