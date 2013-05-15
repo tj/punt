@@ -2,8 +2,8 @@
 var assert = require('better-assert');
 var punt = require('..');
 
-var s = punt.bind('udp://0.0.0.0:5000');
-var c = punt.connect('udp://0.0.0.0:5000');
+var s = punt.bind('0.0.0.0:5000');
+var c = punt.connect('0.0.0.0:5000');
 
 describe('Client#send(buffer)', function(){
   it('should transfer the message', function(done){

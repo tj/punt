@@ -9,7 +9,7 @@ program
   .option('-d, --duration <n>', 'duration of test [5000]', parseInt)
   .parse(process.argv)
 
-var s = punt.bind('udp://0.0.0.0:5050');
+var s = punt.bind('0.0.0.0:5050');
 
 var n = 0;
 var ops = 5000;

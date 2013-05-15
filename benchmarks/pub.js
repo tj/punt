@@ -1,7 +1,7 @@
 
 var punt = require('..');
 
-var c = punt.connect('udp://0.0.0.0:5050');
+var c = punt.connect('0.0.0.0:5050');
 
 var b = new Buffer(Array(256).join('a'));
 function next() {
