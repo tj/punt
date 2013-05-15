@@ -41,3 +41,9 @@ describe('Client#send(object)', function(){
     c.send({ hello: 'world' });
   })
 })
+
+describe('Client#send(msg, fn)', function(){
+  it('should invoke the callback when sent', function(done){
+    c.send({ hello: 'world' }, done);
+  })
+})
