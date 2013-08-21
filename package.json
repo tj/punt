@@ -2,7 +2,11 @@
   "name": "punt",
   "version": "1.0.0",
   "description": "tiny / elegant UDP messaging library",
-  "keywords": ["message", "messaging", "udp"],
+  "keywords": [
+    "message",
+    "messaging",
+    "udp"
+  ],
   "devDependencies": {
     "mocha": "~1.9.0",
     "humanize-number": "0.0.1",
@@ -11,5 +15,9 @@
   "dependencies": {
     "better-assert": "~1.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visionmedia/punt.git"
+  }
 }
