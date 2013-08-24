@@ -6,10 +6,9 @@
   "devDependencies": {
     "mocha": "~1.9.0",
     "humanize-number": "0.0.1",
+    "better-assert": "~1.0.0",
     "commander": "~1.1.1"
   },
-  "dependencies": {
-    "better-assert": "~1.0.0"
-  },
+  "dependencies": {},
   "license": "MIT"
 }
