@@ -1,6 +1,6 @@
 {
   "name": "punt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "tiny / elegant UDP messaging library",
   "keywords": ["message", "messaging", "udp"],
   "devDependencies": {
