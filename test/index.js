@@ -7,10 +7,10 @@ var c = punt.connect('0.0.0.0:5000');
 
 describe('Client#send(buffer)', function(){
   it('should transfer the message', function(done){
-    s.once('message', function(msg, info){
+    s.once('message', function(msg){
       assert('Buffer' == msg.constructor.name);
       assert('Hello' == msg.toString());
-      assert(6 == info.size);
+      assert(10 == this.info.size);
       done();
     });
 
@@ -20,7 +20,7 @@ describe('Client#send(buffer)', function(){
 
 describe('Client#send(string)', function(){
   it('should convert to a buffer', function(done){
-    s.once('message', function(msg, info){
+    s.once('message', function(msg){
       assert('string' == typeof msg);
       assert('Hello' == msg);
       done();
@@ -32,18 +32,12 @@ describe('Client#send(string)', function(){
 
 describe('Client#send(object)', function(){
   it('should json stringify and convert to a buffer', function(done){
-    s.once('message', function(msg, info){
+    s.once('message', function(msg){
       assert('object' == typeof msg);
       assert('world' == msg.hello);
       done();
     });
 
     c.send({ hello: 'world' });
-  })
-})
-
-describe('Client#send(msg, fn)', function(){
-  it('should invoke the callback when sent', function(done){
-    c.send({ hello: 'world' }, done);
   })
 })

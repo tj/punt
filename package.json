@@ -2,13 +2,19 @@
   "name": "punt",
   "version": "1.0.1",
   "description": "tiny / elegant UDP messaging library",
-  "keywords": ["message", "messaging", "udp"],
+  "keywords": [
+    "message",
+    "messaging",
+    "udp"
+  ],
   "devDependencies": {
     "mocha": "~1.9.0",
     "humanize-number": "0.0.1",
     "better-assert": "~1.0.0",
     "commander": "~1.1.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "amp-message": "~0.1.1"
+  },
   "license": "MIT"
 }

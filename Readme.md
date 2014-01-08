@@ -2,6 +2,8 @@
 # Punt
 
   A small layer on top of node's core __UDP__ module to make fast volatile messaging even simpler.
+  Punt uses the tiny [AMP](https://github.com/visionmedia/node-amp) prototol to serialize buffer, string,
+  and json arguments.
 
 ## Installation
 
@@ -33,7 +35,7 @@ setInterval(function(){
 }, 150);
 
 setInterval(function(){
-  c.send(new Buffer('hello world'));
+  c.send(new Buffer('hello'));
 }, 150);
 ```
 
@@ -48,24 +50,6 @@ hello world
 { hello: 'world' }
 ...
 ```
-
-## Protocol
-
-  Punt's protocol is super simple, a `type` annotation followed by the original `data`:
-
-```
-    1        N
- +-----------------+
- | type | data ... |
- +-----------------+
- ```
-
-  Where `type` is one of the following:
-
-  - `0`: buffer
-  - `1`: string
-  - `2`: json
-
 ## API
 
 ### Server(addr)
@@ -76,9 +60,14 @@ hello world
 
   Connect to the given `addr`.
 
-### Client#send(msg)
+### Client#send(...)
 
-  Send `msg` which may be a `Buffer`, string, or object converted to JSON.
+  Send one or more arguments a single atomic message. The following
+  types are supported through AMP:
+
+  - strings
+  - buffers
+  - objects (serialized as JSON)
 
 ## License
 
