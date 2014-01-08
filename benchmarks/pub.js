@@ -7,7 +7,7 @@ var b = new Buffer(Array(256).join('a'));
 function next() {
   var n = 100;
   while (n--) c.send(b);
-  process.nextTick(next);
+  setImmediate(next);
 }
 
 next();
