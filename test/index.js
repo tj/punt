@@ -5,7 +5,20 @@ var punt = require('..');
 var s = punt.bind('0.0.0.0:5000');
 var c = punt.connect('0.0.0.0:5000');
 
-describe('Client#send(buffer)', function(){
+describe('.bind()', function(){
+  it.only('should support ephemeral ports', function(done){
+    var s = punt.bind('0.0.0.0:0');
+
+    s.on('bind', function(){
+      assert(s.address, '.address missing');
+      assert(s.address.address);
+      assert(s.address.port);
+      done();
+    });
+  })
+})
+
+describe('.send(buffer)', function(){
   it('should transfer the message', function(done){
     s.once('message', function(msg){
       assert('Buffer' == msg.constructor.name);
@@ -18,7 +31,7 @@ describe('Client#send(buffer)', function(){
   })
 })
 
-describe('Client#send(string)', function(){
+describe('.send(string)', function(){
   it('should convert to a buffer', function(done){
     s.once('message', function(msg){
       assert('string' == typeof msg);
@@ -30,7 +43,7 @@ describe('Client#send(string)', function(){
   })
 })
 
-describe('Client#send(object)', function(){
+describe('.send(object)', function(){
   it('should json stringify and convert to a buffer', function(done){
     s.once('message', function(msg){
       assert('object' == typeof msg);
