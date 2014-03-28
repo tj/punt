@@ -42,10 +42,10 @@ setInterval(function(){
   yielding:
 
 ```
-<Buffer 68 65 6c 6c 6f 20 77 6f 72 6c 64>
+<Buffer 68 65 6c 6c 6f>
 hello world
 { hello: 'world' }
-<Buffer 68 65 6c 6c 6f 20 77 6f 72 6c 64>
+<Buffer 68 65 6c 6c 6f>
 hello world
 { hello: 'world' }
 ...
