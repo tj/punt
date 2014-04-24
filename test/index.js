@@ -6,7 +6,7 @@ var s = punt.bind('0.0.0.0:5000');
 var c = punt.connect('0.0.0.0:5000');
 
 describe('.bind()', function(){
-  it.only('should support ephemeral ports', function(done){
+  it('should support ephemeral ports', function(done){
     var s = punt.bind('0.0.0.0:0');
 
     s.on('bind', function(){
