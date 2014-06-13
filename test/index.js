@@ -31,14 +31,12 @@ describe('.send(buffer)', function(){
   })
 })
 
-describe('.send(buffer)', function(){
-  it('should fire send callback', function(done){
-
+describe('.send(buffer, callback)', function(){
+  it('should invoke the callback', function(done){
     c.send(new Buffer('Hello'), new Buffer('World'), function(err, bytes) {
-      assert(19 == bytes);
+      assert(!err);
       done();
     });
-
   })
 })
 
