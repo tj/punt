@@ -31,6 +31,17 @@ describe('.send(buffer)', function(){
   })
 })
 
+describe('.send(buffer)', function(){
+  it('should fire send callback', function(done){
+
+    c.send(new Buffer('Hello'), new Buffer('World'), function(err, bytes) {
+      assert(19 == bytes);
+      done();
+    });
+
+  })
+})
+
 describe('.send(string)', function(){
   it('should convert to a buffer', function(done){
     s.once('message', function(msg){

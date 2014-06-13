@@ -20,3 +20,9 @@ setInterval(function(){
 setInterval(function(){
   c.send(new Buffer('hello world'));
 }, 150);
+
+setInterval(function(){
+  c.send(new Buffer('hello world with fn'), function(err, bytes) {
+    console.log('Sent %s bytes', bytes);
+  });
+}, 150);
