@@ -1,6 +1,6 @@
 {
   "name": "punt",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "tiny / elegant UDP messaging library",
   "keywords": [
     "message",
@@ -20,5 +20,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/visionmedia/punt.git"
-  }
+  },
+  "scripts": {}
 }
