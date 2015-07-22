@@ -29,6 +29,23 @@ describe('.send(buffer)', function(){
 
     c.send(new Buffer('Hello'));
   })
+
+  it('should gracefully fail message parsing', function(done){
+    function fail () {
+      done(new Error('Should not emit messages on parse failure'));
+    }
+    s.once('message', fail);
+
+    s.once('parse-error', function(err, buf){
+      s.removeListener('message', fail);
+      assert(err instanceof Error);
+      assert('Buffer' == buf.constructor.name);
+      assert('fail' == buf.toString());
+      done();
+    });
+
+    s.onmessage(new Buffer('fail'));
+  })
 })
 
 describe('.send(buffer, callback)', function(){
