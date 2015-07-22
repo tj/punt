@@ -8,10 +8,10 @@
     "udp"
   ],
   "devDependencies": {
-    "mocha": "~1.9.0",
-    "humanize-number": "0.0.1",
     "better-assert": "~1.0.0",
-    "commander": "~1.1.1"
+    "commander": "~2.8.1",
+    "humanize-number": "0.0.2",
+    "mocha": "~2.2.5"
   },
   "dependencies": {
     "amp-message": "~0.1.1"
