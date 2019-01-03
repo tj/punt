@@ -27,7 +27,7 @@ describe('.send(buffer)', function(){
       done();
     });
 
-    c.send(new Buffer('Hello'));
+    c.send(Buffer.from('Hello'));
   })
 
   it('should gracefully fail message parsing', function(done){
@@ -44,13 +44,13 @@ describe('.send(buffer)', function(){
       done();
     });
 
-    s.onmessage(new Buffer('fail'));
+    s.onmessage(Buffer.from('fail'));
   })
 })
 
 describe('.send(buffer, callback)', function(){
   it('should invoke the callback', function(done){
-    c.send(new Buffer('Hello'), new Buffer('World'), function(err, bytes) {
+    c.send(Buffer.from('Hello'), Buffer.from('World'), function(err, bytes) {
       assert(!err);
       done();
     });

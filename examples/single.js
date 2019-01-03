@@ -18,11 +18,11 @@ setInterval(function(){
 }, 150);
 
 setInterval(function(){
-  c.send(new Buffer('hello world'));
+  c.send(Buffer.from('hello world'));
 }, 150);
 
 setInterval(function(){
-  c.send(new Buffer('hello world with fn'), function(err, bytes) {
+  c.send(Buffer.from('hello world with fn'), function(err, bytes) {
     console.log('Sent %s bytes', bytes);
   });
 }, 150);

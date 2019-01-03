@@ -35,7 +35,7 @@ setInterval(function(){
 }, 150);
 
 setInterval(function(){
-  c.send(new Buffer('hello'));
+  c.send(Buffer.from('hello'));
 }, 150);
 ```
 
